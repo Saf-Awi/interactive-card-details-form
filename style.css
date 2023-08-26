@@ -1,0 +1,330 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root {
+    --active-input-border-gradient: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    --error-input-red: hsl(0, 100%, 66%);
+    --white: hsl(0, 0%, 100%);
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet: hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+
+
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    background-image: url(./images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    background-color: var(--white);
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+}
+
+.thank-you-message {
+    display: none;
+    place-items: center;
+    margin-top: 200px;
+    text-align: center;
+
+    
+}
+
+.thank-you-message p{
+    color: var(--dark-grayish-violet);
+}
+
+#continue-btn {
+    padding: 10px;
+    color: var(--white);
+    background-color: var(--very-dark-violet);
+    border: 1px solid var(--very-dark-violet);
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px 150px;
+    margin-top: 10px;
+}
+
+main {
+    display: flex;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    left: 30px;
+}
+
+.ex-date-cvc {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+}
+
+
+.ex-date {
+    width: 60px;
+}
+
+input {
+    height: 30px;
+    border: 1px solid var(--light-grayish-violet);
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.input-error {
+    border-color: var(--error-input-red);
+
+}
+
+input:hover {
+    border-color: var(--very-dark-violet);
+}
+
+.yy {
+    margin-left: 15px;
+}
+
+em {
+    color: var(--error-input-red);
+    font-size: 15px;
+}
+
+#confirm-btn {
+    padding: 10px;
+    color: var(--white);
+    background-color: var(--very-dark-violet);
+    border: 1px solid var(--very-dark-violet);
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.card-front-back {
+    color: var(--white);
+}
+
+.ex-date-p, .cardholder, .card-number, .card-logo, .cvc-number {
+    z-index: 999;
+    position: relative;
+}
+
+
+.card-front {
+    margin-top: 100px;
+    position: relative;
+    right: 70px;
+}
+
+.card-logo {
+    right: 430px;
+    bottom: 170px;
+}
+
+.card-number {
+    bottom: 140px;
+    left: 25px;
+    font-size: 27px; 
+    letter-spacing: 5px;
+}
+
+.cardholder {
+    bottom: 130px;
+    left: 20px;
+}
+
+.ex-date-p {
+    bottom: 170px;
+    left: 370px;
+}
+
+.card-back {
+    position: relative;
+    bottom: 140px;
+    left: 20px;
+}
+
+.cvc-number {
+    letter-spacing: 3px;
+    bottom: 160px;
+    left: 340px;
+}
+
+.confirm:hover, .continue:hover {
+    background: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    border: none;
+
+}
+
+.confirm, .continue {
+    transition: background-color 0.8s ease-in-out;
+
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+.confirm.shake {
+    animation: shake 0.7s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (max-width: 768px) {
+    * {
+        margin: 0;
+    
+    }
+    html {
+        overflow: hidden;
+    }
+    body {
+        background-image: url(./images/bg-main-mobile.png);
+        background-repeat: no-repeat;
+
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-front img, .card-back img{
+        width: 300px;
+    }
+
+    .card-back {
+        position: relative;
+        bottom: 334px;
+        left: 20px;
+    }
+
+    .card-front {
+        z-index: 99;
+        margin-left: 50px;
+        margin-top: 130px;
+    }
+
+    .cvc-number {
+        bottom: 100px;
+        left: 220px;
+    }
+
+    .card-logo {
+        bottom: 100px;
+        right: 280px;
+    }
+
+    .card-number {
+        font-size: 18px;
+        letter-spacing: 2px;
+        bottom: 70px;
+
+    }
+
+    form {
+        display: flex;
+        position: relative;
+        left: 0;
+        bottom: 400px;
+    }
+
+    input {
+        height: 30px;
+        width: 300px;
+
+    }
+
+    #confirm-btn {
+        width: 320px;
+    }
+
+    .cvc-input {
+        width: 120px;
+
+    }
+
+    .yy {
+        margin-left: 4px;
+    }
+
+    .attribution {
+        position: absolute;
+        bottom: 0;
+        left: 30px;
+    }
+
+    .cardholder {
+        bottom: 60px;
+        left: 20px;
+        font-size: 15px;
+    }
+
+    .ex-date-p {
+        bottom: 80px;
+        left: 220px;
+        font-size: 15px;
+    }
+
+    .thank-you-message {
+        display: none;
+        margin-top: 0px;
+        position: relative;
+        right: 40px;
+        bottom: 200px;
+        text-align: center;
+
+    }
+
+    .thank-you-message p {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        
+    }
+
+    .complete-logo {
+        margin-bottom: 20px;
+    }
+
+    #continue-btn {
+        padding: 10px 120px;
+        
+    }
+
+    
+}
+
+
+
+
+
+
+
+

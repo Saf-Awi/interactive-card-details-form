@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Interactive card details form</title>
+
+
+</head>
+<body>
+  <main>
+
+    <div class="card-front-back">
+      <div id="cardFront" class="card-front">
+        <img src="./images/bg-card-front.png" class="bg-card-front" alt="card front">
+        <svg class="card-logo" width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff"/><path d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z" stroke="#fff"/></svg>
+        <p class="card-number">0000 0000 0000 0000</p>
+        <p class="cardholder">JANE APPLESEED</p>
+        <p class="ex-date-p">
+          <span class="ex-date-month">00</span>/<span class="ex-date-year">00</span>
+        </p>
+
+        
+      </div>
+      <div id="cardBack" class="card-back">
+        <img src="./images/bg-card-back.png" alt="card back" class="bg-card-back">
+        <p class="cvc-number">000</p>
+      </div>
+    </div>
+
+    <div class="card-info-container">
+      <form action="#">
+        <label class="cardholder-label" for="cardholder">CARDHOLDER NAME</label>
+        <input 
+        type="text"
+        name="cardholder"
+        placeholder="e.g. Jane Appleseed"
+        class="cardholder-input"
+        required
+        >
+
+        <label class="card-number-label" for="cardnumber">CARD NUMBER</label>
+        <input 
+        type="text"
+        name="cardnumber"
+        placeholder="e.g. 1234 5678 9123 0000"
+        class="card-number-input"
+        required
+        >
+        <em class="hidden">Wrong format, numbers only</em>
+
+        <div class="ex-date-cvc">
+          <div class="flex-left">
+            <label class="ex-date-label" for="expiry-date">EXP. DATE (MM/YY)</label><br>
+            <input type="number"
+            name="expiry-date"
+            placeholder="MM"
+            class="ex-date mm"
+            required
+            >
+            <input type="number"
+            name="expiry-date"
+            placeholder="YY"
+            class="ex-date yy"
+            required
+            ><br>
+            <em class="hidden">Can't be blank</em>
+          </div>
+
+          <div class="flex-right">
+          <label class="cvc-label" for="cvc-numb">CVC</label><br>
+          <input 
+          type="number"
+          name="cvc-numb"
+          placeholder="e.g. 123"
+          class="cvc-input"
+          required
+          > <br>
+          <em class="hidden">Can't be blank</em>
+          </div>
+
+        </div>
+        <button class="confirm" id="confirm-btn">Confirm</button>
+      </form>
+
+      <div class="thank-you-message">
+        <img src="./images/icon-complete.svg" alt="complete logo" class="complete-logo">
+        <h1>THANK YOU</h1>
+        <p class="complete-message">We've added your card details</p>
+        <button class="continue" id="continue-btn">Continue</button>
+      </div>
+    </div>
+
+  </main>
+
+
+  
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Safa Al-Hilo</a>.
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
